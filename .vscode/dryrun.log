@@ -1,0 +1,7 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/riley/Documents/Coding/C++/FNF SDL'
+cp -r assets bin
+g++ src/*.c* -lSDL2 -lSDL2main -lSDL2_image -lSDL2_mixer -lSDL2_ttf -m64 -Wall -I include/ -o bin/Funkin
+ 
+make: Leaving directory '/home/riley/Documents/Coding/C++/FNF SDL'
+ 
