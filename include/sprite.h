@@ -39,6 +39,7 @@ class Sprite : public Object
         int height;
 
         float scale;
+        double angle;
 
         bool is_animated; // animated sprite variables :scream
         bool animation_finished;
@@ -71,4 +72,5 @@ class Sprite : public Object
         virtual void add_frames_by_prefix(std::string prefix, AnimationData *animation_data);
 
         virtual void add_offset(std::string name, SDL_Rect offset);
+        virtual void center_offset(std::string to, std::string from); // center the offset of to, depending on from
 };

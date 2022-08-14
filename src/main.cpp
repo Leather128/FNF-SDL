@@ -63,8 +63,18 @@ int main(int argc, char *argv[])
 	Mix_PlayMusicStream(inst, -1);
 	Mix_PlayMusicStream(voices, -1);
 
-	Sprite *test = new Sprite(0, 0, "assets/images/test");
-	test->set_size(0, 720);
+	Sprite *test = new Sprite(0, 0, "assets/images/notes/default", true);
+
+	test->add_animation_by_prefix("idle", "up static0", 24, true);
+	test->add_animation_by_prefix("hey", "up confirm0", 24, false);
+
+	test->add_offset("idle", {0, 0, 0, 0});
+	test->center_offset("hey", "idle");
+
+	test->play_animation("idle");
+
+	bool moving_down = true;
+
 	Game::objects.push_back(test);
 
 	FPS *fps = new FPS(0, 0);
@@ -82,6 +92,28 @@ int main(int argc, char *argv[])
 		NOW = SDL_GetPerformanceCounter();
 
 		elapsed = (double)((NOW - LAST) * 1000.0f / (double)SDL_GetPerformanceFrequency());
+
+		test->x = (sin(Game::ticks) * 720.0f) + 360.0f;
+		//test->angle = sin(Game::ticks) * 360.0f;
+
+		if (moving_down)
+			test->y += elapsed * 0.25f;
+		else
+			test->y -= elapsed * 0.25f;
+
+		if (test->y <= 0.0f)
+		{
+			moving_down = true;
+			test->play_animation("hey", true);
+		}
+		else if (test->y + test->height >= 720.0f)
+		{
+			moving_down = false;
+			test->play_animation("hey", true);
+		}
+
+		if (test->animation_finished)
+			test->play_animation("idle");
 
 		Game::update(elapsed / 1000.0f);
 

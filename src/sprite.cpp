@@ -30,6 +30,7 @@ Sprite::Sprite(float x, float y, std::string sprite_path)
     this->antialiased = true;
 
     scale = 1;
+    angle = 0;
 
     SDL_QueryTexture(texture, NULL, NULL, &width, &height);
 
@@ -54,6 +55,7 @@ Sprite::Sprite(float x, float y, std::string sprite_path, bool is_animated)
     this->antialiased = true;
 
     scale = 1;
+    angle = 0;
 
     SDL_QueryTexture(texture, NULL, NULL, &width, &height);
 
@@ -160,7 +162,12 @@ void Sprite::render()
 
     // render to window :scream: (but only if on screen)
     if (Window::rect_on_screen(&_sdl_dest))
-        Game::window.render(texture, &_sdl_src, &_sdl_dest);
+    {
+        if (angle == 0)
+            Game::window.render(texture, &_sdl_src, &_sdl_dest);
+        else
+            Game::window.render(texture, &_sdl_src, &_sdl_dest, angle);
+    }
 }
 
 /**
@@ -272,6 +279,22 @@ void Sprite::add_offset(std::string name, SDL_Rect offset)
 {
     if (animations.contains(name))
         animations[name].offset = offset;
+}
+
+/**
+ * @brief Center the offset of `to` to match `from`.
+ * 
+ * @param to 
+ * @param from 
+ */
+void Sprite::center_offset(std::string to, std::string from)
+{
+    Sprite::add_offset(to, {
+        (animations[to].frames[0].w - animations[from].frames[0].w) / 2,
+        (animations[to].frames[0].h - animations[from].frames[0].h) / 2,
+        0,
+        0
+    });
 }
 
 /**

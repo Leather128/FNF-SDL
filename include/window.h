@@ -37,4 +37,10 @@ public:
     void render(SDL_Texture* texture, const SDL_Rect *src, const SDL_Rect *dest);
 
     void set_antialiased(bool antialiased);
+
+    // angled rendering
+
+    void render(SDL_Texture* texture, double angle);
+    void render(SDL_Texture* texture, const SDL_Rect *dest, double angle);
+    void render(SDL_Texture* texture, const SDL_Rect *src, const SDL_Rect *dest, double angle);
 };

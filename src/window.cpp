@@ -115,6 +115,42 @@ void Window::render(SDL_Texture *texture, const SDL_Rect *src, const SDL_Rect *d
 }
 
 /**
+ * @brief Renders the current texture to the screen at angle.
+ * 
+ * @param texture 
+ * @param angle
+ */
+void Window::render(SDL_Texture *texture, double angle)
+{
+    SDL_RenderCopyEx(renderer, texture, NULL, NULL, angle, NULL, SDL_FLIP_NONE);
+}
+
+/**
+ * @brief Renders the current texture to the screen at the dest and at angle.
+ * 
+ * @param texture 
+ * @param dest
+ * @param angle
+ */
+void Window::render(SDL_Texture *texture, const SDL_Rect *dest, double angle)
+{
+    SDL_RenderCopyEx(renderer, texture, NULL, dest, angle, NULL, SDL_FLIP_NONE);
+}
+
+/**
+ * @brief Renders src at current texture to the dest at angle.
+ * 
+ * @param texture 
+ * @param src 
+ * @param dest 
+ * @param angle 
+ */
+void Window::render(SDL_Texture *texture, const SDL_Rect *src, const SDL_Rect *dest, double angle)
+{
+    SDL_RenderCopyEx(renderer, texture, src, dest, angle, NULL, SDL_FLIP_NONE);
+}
+
+/**
  * @brief Displays the current frame onto the screen.
  * 
  */
