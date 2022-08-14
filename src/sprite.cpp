@@ -89,22 +89,12 @@ Sprite::~Sprite()
  */
 void Sprite::update(double elapsed)
 {
-    // what am i supposed to put here
-}
-
-/**
- * @brief Render the sprite with it's current properties
- * 
- */
-void Sprite::render()
-{
-    _sdl_dest.x = x;
-    _sdl_dest.y = y;
-
+    // set frame values
     if (is_animated)
     {
         if (animations.contains(animation))
         {
+            // check if 1 / animation fps time has passed (for next frame)
             if (Game::ticks - last_frame_tick >= 1.0f / (float)animations[animation].fps)
             {
                 animation_finished = false;
@@ -124,7 +114,24 @@ void Sprite::render()
                     }
                 }
             }
+        }
+    }
+}
 
+/**
+ * @brief Render the sprite with it's current properties
+ * 
+ */
+void Sprite::render()
+{
+    _sdl_dest.x = x;
+    _sdl_dest.y = y;
+
+    // add animation offsets to dest
+    if (is_animated)
+    {
+        if (animations.contains(animation))
+        {
             if (animations[animation].frames.size() > 0 && (int)animations[animation].offsets.size() > 0)
             {
                 _sdl_src = animations[animation].frames[frame];
@@ -141,6 +148,7 @@ void Sprite::render()
         }
     }
 
+    // yees we use da funny
     _sdl_dest.w = (int)(width * scale);
     _sdl_dest.h = (int)(height * scale);
 
@@ -150,7 +158,9 @@ void Sprite::render()
     else
         SDL_SetTextureScaleMode(texture, SDL_ScaleModeNearest);
 
-    Game::window.render(texture, &_sdl_src, &_sdl_dest);
+    // render to window :scream: (but only if on screen)
+    if (Window::rect_on_screen(&_sdl_dest))
+        Game::window.render(texture, &_sdl_src, &_sdl_dest);
 }
 
 /**

@@ -5,6 +5,7 @@
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_ttf.h>
 
+#include "game.h"
 #include "window.h"
 
 /**
@@ -120,4 +121,23 @@ void Window::render(SDL_Texture *texture, const SDL_Rect *src, const SDL_Rect *d
 void Window::display()
 {
     SDL_RenderPresent(renderer);
+}
+
+/**
+ * @brief Returns whether or not the specified SDL_Rect is on screen (using a pointer to prevent memory leaks and stuff).
+ * 
+ * @param rect 
+ * @return true 
+ * @return false 
+ */
+bool Window::rect_on_screen(const SDL_Rect *rect)
+{
+    // if rect is 
+    if (rect->x + rect->w >= 0 && rect->x < Game::width)
+    {
+        if (rect->y + rect->h >= 0 && rect->y < Game::height)
+            return true;
+    }
+
+    return false;
 }

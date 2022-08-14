@@ -10,6 +10,15 @@
 #include "sparrow_helper.h"
 #include "system_paths.h"
 
+/**
+ * @brief Returns a std::map<std::string, SDL_Rect> of animation frame names to their coordinates
+ * on a spritesheet (with ones with an appended _offsets after for storing offsets)
+ * 
+ * @TODO: Possibly change the _offests system to a custom container of 2 SDL_Rect(s)?
+ * 
+ * @param sparrow_path 
+ * @return std::map<std::string, SDL_Rect> 
+ */
 std::map<std::string, SDL_Rect> SparrowHelper::get_sparrow(std::string sparrow_path)
 {
     std::map<std::string, SDL_Rect> map = {};

@@ -23,6 +23,7 @@ public:
     // utilities
 
     SDL_Texture* load_texture(std::string file_path);
+    bool static rect_on_screen(const SDL_Rect *rect);
     
     // display stuff
 
