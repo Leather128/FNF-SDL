@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
 		elapsed = (double)((NOW - LAST) * 1000.0f / (double)SDL_GetPerformanceFrequency());
 
 		test->x = (sin(Game::ticks) * 720.0f) + 360.0f;
-		//test->angle = sin(Game::ticks) * 360.0f;
+		test->angle = sin(Game::ticks) * 360.0f;
 
 		if (moving_down)
 			test->y += elapsed * 0.25f;
