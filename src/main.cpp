@@ -37,9 +37,6 @@ int main(int argc, char *argv[])
 	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096) < 0)
 		printf("Mix_OpenAudio failed, Error: %s\n", Mix_GetError());
 
-	Uint64 start_tick = SDL_GetTicks64();
-	Uint64 end_tick = 0;
-
 	Paths::init();
 
 	Game::width = 1280;
@@ -49,8 +46,6 @@ int main(int argc, char *argv[])
 	
 	Game::default_font = TTF_OpenFont(Paths::get_system_path("assets/fonts/vcr.ttf").c_str(), 14);
 
-	end_tick = SDL_GetTicks64();
-
 	bool running = true;
 
 	SDL_Event event;
@@ -58,8 +53,6 @@ int main(int argc, char *argv[])
 	Uint64 NOW = SDL_GetPerformanceCounter();
 	Uint64 LAST = 0;
 	double elapsed = 0;
-
-	end_tick = SDL_GetTicks64();
 
 	Mix_Music *inst = Mix_LoadMUS(Paths::get_system_path("assets/songs/bopeebo/Inst.ogg").c_str());
 	Mix_Music *voices = Mix_LoadMUS(Paths::get_system_path("assets/songs/bopeebo/Voices.ogg").c_str());
