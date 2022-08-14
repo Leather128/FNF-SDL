@@ -1,7 +1,10 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/riley/Documents/Coding/C++/FNF SDL'
 cp -r assets bin
-g++ src/*.c* -lSDL2 -lSDL2main -lSDL2_image -lSDL2_mixer -lSDL2_ttf -m64 -Wall -I include/ -o bin/Funkin
- 
+mv obj/*.o ./ || echo
+g++ -c src/external/*.c* -lSDL2 -lSDL2main -lSDL2_image -lSDL2_mixer_ext -lSDL2_ttf -m64 -Wall -std=c++20 -I include/ -I include/external
+g++ -c src/*.c* -lSDL2 -lSDL2main -lSDL2_image -lSDL2_mixer_ext -lSDL2_ttf -m64 -Wall -std=c++20 -I include/ -I include/external
+mv *.o obj/
+g++ obj/*.o -lSDL2 -lSDL2main -lSDL2_image -lSDL2_mixer_ext -lSDL2_ttf -m64 -Wall -std=c++20 -I include/ -I include/external -o bin/Funkin
 make: Leaving directory '/home/riley/Documents/Coding/C++/FNF SDL'
  

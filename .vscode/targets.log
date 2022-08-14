@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jul 18 23:42:59 2022
+# Make data base, printed on Sat Aug 13 21:52:51 2022
 
 # Variables
 
@@ -20,8 +20,6 @@ LC_ALL = C
 NO_AT_BRIDGE = 1
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/riley/.gtkrc:/home/riley/.config/gtkrc
-# makefile (from 'Makefile', line 1)
-program_name = Funkin
 # environment
 LC_NAME = en_US.UTF-8
 # environment
@@ -32,12 +30,8 @@ VSCODE_CWD = /home/riley
 LC_ADDRESS = en_US.UTF-8
 # default
 MAKE_COMMAND := make
-# makefile (from 'Makefile', line 3)
-source_paths = src/*.c*
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
-# makefile (from 'Makefile', line 5)
-libraries = -lSDL2 -lSDL2main -lSDL2_image -lSDL2_mixer -lSDL2_ttf
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
@@ -53,7 +47,7 @@ MAIL = /var/spool/mail/riley
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/riley/.config/Code/CachedData/b06ae3b2d2dbfe28bca3134cc6be65935cdfea6a
+VSCODE_CODE_CACHE_PATH = /home/riley/.config/Code/CachedData/6d9b74a70ca9c7733b29f0456fd8195364076dda
 # environment
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
 # environment
@@ -69,7 +63,7 @@ MAKEFLAGS = pqrR
 # makefile
 CURDIR := /home/riley/Documents/Coding/C++/FNF SDL
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -91,19 +85,21 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 79575
+VSCODE_PID = 68765
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/riley-the-banshee:@/tmp/.ICE-unix/748,unix/riley-the-banshee:/tmp/.ICE-unix/748
+SESSION_MANAGER = local/the-banshee:@/tmp/.ICE-unix/757,unix/the-banshee:/tmp/.ICE-unix/757
 # automatic
 *F = $(notdir $*)
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
+# makefile (from 'Makefile', line 6)
+LIB = -lSDL2 -lSDL2main -lSDL2_image -lSDL2_mixer_ext -lSDL2_ttf
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
 # environment
@@ -115,15 +111,17 @@ SHELL = /bin/sh
 # default
 MAKECMDGOALS := all
 # environment
+DOTNET_BUNDLE_EXTRACT_BASE_DIR = /home/riley/.cache/dotnet_bundle_extract
+# environment
 SHLVL = 1
+# makefile (from 'Makefile', line 4)
+SDIR = src
 # environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /home/riley/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
-# makefile (from 'Makefile', line 6)
-compiler_options = -m64 -Wall
+PATH = /usr/local/sbin:/usr/local/bin:/usr/bin:/home/riley/.dotnet/tools:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
 # default
 MAKEFILES := 
 # environment
@@ -137,13 +135,15 @@ LC_TIME = en_US.UTF-8
 # environment
 HAXE_STD_PATH = /usr/share/haxe/std
 # environment
-INVOCATION_ID = e26c258c71bb4d92bb43ec81a50181f9
+INVOCATION_ID = 81e338929e1b40aa955c7bccb926bc8e
 # environment
 LC_TELEPHONE = en_US.UTF-8
 # automatic
 ?F = $(notdir $?)
 # environment
 KDE_APPLICATIONS_AS_SCOPE = 1
+# makefile (from 'Makefile', line 5)
+INC = include/ -I include/external
 # environment
 XDG_SEAT = seat0
 # environment
@@ -167,7 +167,7 @@ XDG_VTNR = 1
 # makefile
 .DEFAULT_GOAL := default
 # environment
-SYSTEMD_EXEC_PID = 779
+SYSTEMD_EXEC_PID = 790
 # environment
 EDITOR = nano
 # environment
@@ -180,10 +180,8 @@ USER = riley
 MAKE_VERSION := 4.3
 # environment
 KDE_SESSION_UID = 1000
-# makefile (from 'Makefile', line 4)
-include_paths = include/
 # environment
-MANAGERPID = 702
+MANAGERPID = 707
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
@@ -193,7 +191,7 @@ LC_PAPER = en_US.UTF-8
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-JOURNAL_STREAM = 8:16932
+JOURNAL_STREAM = 8:22087
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -202,10 +200,12 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 GTK2_RC_FILES = /etc/gtk-2.0/gtkrc:/home/riley/.gtkrc-2.0:/home/riley/.config/gtkrc-2.0
 # environment
 HOME = /home/riley
+# makefile (from 'Makefile', line 7)
+OPTIONS = -m64 -Wall -std=c++20
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-5e3e7241-1.69.1-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-5e3e7241-1.70.1-main.sock
 # environment
 XDG_SESSION_ID = 2
 # environment
@@ -214,6 +214,8 @@ XCURSOR_SIZE = 24
 .RECIPEPREFIX := 
 # automatic
 <F = $(notdir $<)
+# makefile (from 'Makefile', line 2)
+OUT = Funkin
 # default
 SUFFIXES := 
 # environment
@@ -226,12 +228,16 @@ ELECTRON_NO_ATTACH_CONSOLE = 1
 KDE_SESSION_VERSION = 5
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
+# makefile (from 'Makefile', line 1)
+CC = g++
 # environment
 KDE_FULL_SESSION = true
 # environment
+DOTNET_ROOT = /usr/share/dotnet
+# environment
 LC_IDENTIFICATION = en_US.UTF-8
 # variable set hash-table stats:
-# Load=109/1024=11%, Rehash=0, Collisions=4/139=3%
+# Load=112/1024=11%, Rehash=0, Collisions=4/142=3%
 
 # Pattern-specific Variable Values
 
@@ -239,9 +245,9 @@ LC_IDENTIFICATION = en_US.UTF-8
 
 # Directories
 
-# . (device 2050, inode 4596574): 9 files, no impossibilities.
+# . (device 2053, inode 4195175): 22 files, no impossibilities.
 
-# 9 files, no impossibilities in 1 directories.
+# 22 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -253,14 +259,18 @@ default:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 9):
+#  recipe to execute (from 'Makefile', line 10):
 	cp -r assets bin
-	g++ ${source_paths} ${libraries} ${compiler_options} -I ${include_paths} -o bin/${program_name}
+	mv obj/*.o ./ || echo
+	${CC} -c ${SDIR}/external/*.c* ${LIB} ${OPTIONS} -I ${INC}
+	${CC} -c ${SDIR}/*.c* ${LIB} ${OPTIONS} -I ${INC}
+	mv *.o obj/
+	${CC} obj/*.o ${LIB} ${OPTIONS} -I ${INC} -o bin/${OUT}
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-18 23:42:58.457729365
+#  Last modified 2022-08-06 17:31:42.245141085
 #  File has been updated.
 #  Successfully updated.
 
@@ -277,28 +287,21 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
-release:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 13):
-	cp -r ../assets ./
-	g++ ${source_paths} ${libraries} -O3 ${compiler_options} -I ${include_paths} -o bin/${program_name}
-
 # files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/16=0%
+# Load=5/1024=0%, Rehash=0, Collisions=0/15=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
+ 
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 16 / storage = 121 B / avg = 7 B
-# current buf: size = 8162 B / used = 121 B / count = 16 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 28 / storage = 246 B / avg = 8 B
+# current buf: size = 8162 B / used = 246 B / count = 28 / avg = 8 B
 
-# strcache performance: lookups = 22 / hit rate = 27%
+# strcache performance: lookups = 33 / hit rate = 15%
 # hash-table stats:
-# Load=16/8192=0%, Rehash=0, Collisions=0/22=0%
-# Finished Make data base on Mon Jul 18 23:42:59 2022
+# Load=28/8192=0%, Rehash=0, Collisions=0/33=0%
+# Finished Make data base on Sat Aug 13 21:52:51 2022
 
  

@@ -8,6 +8,15 @@
 #include "window.h"
 
 /**
+ * @brief Default Constructor for a Window:: Window object
+ * 
+ */
+Window::Window()
+{
+    // do nothing, is default constructor
+}
+
+/**
  * @brief Construct a new Window object
  * 
  * @param window_title 
@@ -16,21 +25,22 @@
  */
 Window::Window(const char *window_title, int window_w, int window_h) : window(NULL), renderer(NULL)
 {
-    window = SDL_CreateWindow(window_title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, window_w, window_h, SDL_WINDOW_SHOWN);
+    //                                                                                                                             TODO: WINDOW RESIZING LMAO
+    window = SDL_CreateWindow(window_title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, window_w, window_h, SDL_WINDOW_SHOWN/* | SDL_WINDOW_RESIZABLE*/);
 
     if (window == NULL)
-        printf("Window failed to exist in real life :scream: %s\n", SDL_GetError());
+        printf("SDL_CreateWindow failed, Error: %s\n", SDL_GetError());
 
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
     if (renderer == NULL)
     {
-        printf("Somehow, SDL_CreateRenderer has to use Software rendering :( %s\n", SDL_GetError());
+        printf("SDL_RENDERER_ACCELERATED failed, trying SDL_RENDERER_SOFTWARE, Error: %s\n", SDL_GetError());
 
         renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_SOFTWARE);
 
         if (renderer == NULL)
-            printf("Ok so I guess SDL_CreateRenderer just isn't working, here is the error, %s\n", SDL_GetError());
+            printf("SDL_CreateRenderer failed, Error: %s\n", SDL_GetError());
     }
 }
 

@@ -51,7 +51,7 @@
 #ifndef _CRT_SECURE_NO_DEPRECATE
 #define _CRT_SECURE_NO_DEPRECATE
 #endif
-#include "xmlParser.h"
+#include "external/xml_parser.h"
 #ifdef _XMLWINDOWS
 //#ifdef _DEBUG
 //#define _CRTDBG_MAP_ALLOC

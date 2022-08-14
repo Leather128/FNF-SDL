@@ -28,6 +28,21 @@
         "type_traits": "cpp",
         "typeinfo": "cpp",
         "vector": "cpp",
-        "sstream": "cpp"
-    }
+        "sstream": "cpp",
+        "deque": "cpp",
+        "unordered_map": "cpp",
+        "map": "cpp",
+        "array": "cpp",
+        "functional": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp"
+    },
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/riley/Documents/Coding/C++/FNF SDL/bin",
+            "binaryPath": "/home/riley/Documents/Coding/C++/FNF SDL/bin/Funkin",
+            "binaryArgs": []
+        }
+    ],
+    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools"
 }

@@ -82,6 +82,8 @@
  *
  ****************************************************************************/
 
+#pragma once
+
 #ifndef __INCLUDE_XML_NODE__
 #define __INCLUDE_XML_NODE__
 
