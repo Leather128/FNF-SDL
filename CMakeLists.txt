@@ -10,13 +10,14 @@ set(SOURCE_FILES
     src/main.cpp
     src/window.cpp
     src/game.cpp
-    src/object.cpp
-    src/text.cpp
-    src/sprite.cpp
     src/system_paths.cpp
-    src/fps.cpp
-    src/sparrow_helper.cpp
+    src/assets.cpp
+    src/object.cpp
+    src/sprite.cpp
     src/external/xml_parser.cpp
+    src/note.cpp
+    src/text.cpp
+    src/fps.cpp
 )
 
 add_executable(Funkin ${SOURCE_FILES})

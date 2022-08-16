@@ -6,12 +6,6 @@
 #include "fps.h"
 #include "game.h"
 
-/**
- * @brief Construct a new FPS::FPS object at x, y and update the values
- * 
- * @param x 
- * @param y 
- */
 FPS::FPS(float x, float y)
 {
     this->x = x;
@@ -20,11 +14,6 @@ FPS::FPS(float x, float y)
     update_values();
 }
 
-/**
- * @brief Update the current FPS and track game ticks to determine it.
- * 
- * @param elapsed 
- */
 void FPS::update(double elapsed)
 {
     tick_vector.push_back(Game::ticks);
@@ -41,10 +30,6 @@ void FPS::update(double elapsed)
     }
 }
 
-/**
- * @brief Updates the current text value to the correct one (with memory included!)
- * 
- */
 void FPS::update_values()
 {
     current_fps = tick_vector.size();

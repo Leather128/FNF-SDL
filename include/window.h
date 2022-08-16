@@ -9,7 +9,7 @@ class Window
 {
 public:
     // window variables
-    
+
     SDL_Window *window;
     SDL_Renderer *renderer;
     SDL_Surface *screen;
@@ -22,9 +22,9 @@ public:
 
     // utilities
 
-    SDL_Texture* load_texture(std::string file_path);
+    SDL_Texture *load_texture(std::string file_path);
     bool static rect_on_screen(const SDL_Rect *rect);
-    
+
     // display stuff
 
     void clear();
@@ -32,15 +32,15 @@ public:
 
     // rendering textures
 
-    void render(SDL_Texture* texture);
-    void render(SDL_Texture* texture, const SDL_Rect *dest);
-    void render(SDL_Texture* texture, const SDL_Rect *src, const SDL_Rect *dest);
+    void render(SDL_Texture *texture);
+    void render(SDL_Texture *texture, const SDL_Rect *dest);
+    void render(SDL_Texture *texture, const SDL_Rect *src, const SDL_Rect *dest);
 
     void set_antialiased(bool antialiased);
 
     // angled rendering
 
-    void render(SDL_Texture* texture, double angle);
-    void render(SDL_Texture* texture, const SDL_Rect *dest, double angle);
-    void render(SDL_Texture* texture, const SDL_Rect *src, const SDL_Rect *dest, double angle);
+    void render(SDL_Texture *texture, double angle);
+    void render(SDL_Texture *texture, const SDL_Rect *dest, double angle);
+    void render(SDL_Texture *texture, const SDL_Rect *src, const SDL_Rect *dest, double angle);
 };

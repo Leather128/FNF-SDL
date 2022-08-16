@@ -5,22 +5,65 @@
 #include "text.h"
 #include "object.h"
 
+/**
+ * @brief Simple extension of the Text class that displays
+ * the current framerate of the game (and some other info).
+ * 
+ */
 class FPS : public Text
 {
-    public:
-        int current_fps; // values so that you can access them outside this class
+public:
+    /**
+     * @brief Current framerate of the game.
+     * 
+     */
+    int current_fps;
 
-        float current_memory;
-        float peak_memory;
+    /**
+     * @brief Game's current memory usage.
+     * 
+     */
+    float current_memory;
 
-        std::vector<double> tick_vector; // contains a list of all the current tick values (used for calculating FPS)
+    /**
+     * @brief Game's peak memory usage.
+     * 
+     */
+    float peak_memory;
 
-        double _timer_tick; // a timer for when to update the FPS counter next (string manipulation is expensive with std::string, so we only update about every second)
+    /**
+     * @brief A std::vector of all the current ticks to calculate the framerate.
+     * 
+     */
+    std::vector<double> tick_vector;
 
-        FPS(float x, float y);
-        virtual ~FPS() = default;
+    /**
+     * @brief Timer to track when to update the FPS counter.
+     * (we use this because string manipulation is painfully slow)
+     * 
+     */
+    double _timer_tick;
 
-        virtual void update(double elapsed); // calculates fps and stuff basically
+    /**
+     * @brief Construct a new FPS::FPS object at x, y and update the values.
+     * 
+     * @param x 
+     * @param y 
+     */
+    FPS(float x, float y);
 
-        virtual void update_values(); // update the current text variable and variable values
+    virtual ~FPS() = default;
+
+    /**
+     * @brief Update the current FPS and track game ticks to determine it.
+     * 
+     * @param elapsed 
+     */
+    virtual void update(double elapsed);
+
+    /**
+     * @brief Updates the current text value to the correct one (with memory included!).
+     * 
+     */
+    virtual void update_values();
 };

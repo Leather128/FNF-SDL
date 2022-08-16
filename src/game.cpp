@@ -1,19 +1,18 @@
 #include "game.h"
 #include "object.h"
 
-#include <stdio.h>
-
 // defining the global variables cuz weird c/c++ stuffs
 
 std::vector<Object *> Game::objects;
 double Game::ticks;
 double Game::elapsed;
+const Uint8 *Game::keyboard_state;
 
-/**
- * @brief Calls update on all the active Objects with elapsed as the delta time
- * 
- * @param elapsed 
- */
+void Game::init()
+{
+    Game::keyboard_state = SDL_GetKeyboardState(NULL);
+}
+
 void Game::update(double elapsed)
 {
     Game::elapsed = elapsed;
@@ -25,10 +24,6 @@ void Game::update(double elapsed)
     }
 }
 
-/**
- * @brief Calls render on all the active Objects
- * 
- */
 void Game::render()
 {
     Game::window.clear();

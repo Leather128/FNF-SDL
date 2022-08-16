@@ -1,25 +1,28 @@
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
-#include <SDL2/SDL_ttf.h>
-
-#include <map>
-#include <string>
-
 #include "external/xml_parser.h"
 
-#include "sparrow_helper.h"
+#include "assets.h"
+#include "game.h"
 #include "system_paths.h"
 
-/**
- * @brief Returns a std::map<std::string, SDL_Rect> of animation frame names to their coordinates
- * on a spritesheet (with ones with an appended _offsets after for storing offsets)
- * 
- * @TODO: Possibly change the _offests system to a custom container of 2 SDL_Rect(s)?
- * 
- * @param sparrow_path 
- * @return std::map<std::string, SDL_Rect> 
- */
-std::map<std::string, SDL_Rect> SparrowHelper::get_sparrow(std::string sparrow_path)
+std::map<std::string, int> Assets::assets_use_counts;
+std::map<std::string, SDL_Texture *> Assets::image_cache;
+std::map<std::string, Mix_Chunk *> Assets::sound_cache;
+std::map<std::string, TTF_Font *> Assets::font_cache;
+
+SDL_Texture *Assets::get_image(std::string path)
+{
+    if (!Assets::image_cache.contains(path) || Assets::image_cache[path] == nullptr)
+    {
+        SDL_Texture *texture = Game::window.load_texture(Paths::get_system_path(path + ".png"));
+        Assets::image_cache[path] = texture;
+    }
+
+    Assets::assets_use_counts[path] += 1;
+
+    return Assets::image_cache[path];
+}
+
+std::map<std::string, SDL_Rect> Assets::get_sparrow(std::string sparrow_path)
 {
     std::map<std::string, SDL_Rect> map = {};
 
