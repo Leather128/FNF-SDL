@@ -3,6 +3,20 @@ FNF Made in C++ with SDL2 cuz I got bored or something idfk lool
 
 # Building the game
 
-Uh rn I only tested this stuff on Linux (Endeavour OS specifically), but uh just so you know, you need SDL2, SDL_image, SDL_ttf, and SDL_mixer_ext (and prolly SDL_mixer too)
+## Dependencies
 
-SDL_mixer_ext is found at: [This GitHub Repository](https://github.com/WohlSoft/SDL-Mixer-X) (we use it for a more simple audio library BUT multiple audio streams).
+Currently you will need to be using Linux (hopefully Arch based distro) to build without tinkering.
+
+The libraries required are: `sdl2`, `sdl2_image`, `sdl2_ttf`, `sdl2_mixer`, and `sdl2_mixer_ext`.
+
+### SDL2_MIXER_EXT
+
+`sdl2_mixer_ext` is a fork of the main `sdl2_mixer` library we use for multiple music tracks. To install it run the script `Install SDL2_mixer_ext.sh` from the project directory (Linux only for now).
+
+## Building
+
+The build system used for the project is CMake.
+
+To make a build first run `cmake ./` in your terminal of choice while in the project directory to create build files.
+
+Then run `make` to create an executable for the project and run the exetuable afterwards.
